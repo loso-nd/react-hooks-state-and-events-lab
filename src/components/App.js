@@ -9,20 +9,17 @@ function App() {
   // this data will be passed down to the ShoppingList as a prop
   console.log(items);
 
-  const handleClick = () => {
-    
-    if(toggleMode === false){
-      console.log("Welcome to the Dark Side")
-      setToggleMode(true)
-    }
-
+  const toggleTheme = () => {
+  
+    console.log("Welcome to the Dark Side")
+    setToggleMode(toggleMode => !toggleMode)
   }
 
   return (
-    <div className={"App " + (false ? "dark" : "light")}>
+    <div className={"App " + ( toggleMode ? "dark" : "light")}>
       <header>
         <h2>Shopster</h2>
-        <button onClick={() =>handleClick()}>Dark Mode</button>
+        <button onClick={() =>toggleTheme()}>{toggleMode ? "Light Mode" : "Dark Mode"}</button>
       </header>
       <ShoppingList items={items} />
     </div>
