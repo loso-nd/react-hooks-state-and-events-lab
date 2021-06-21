@@ -10,7 +10,6 @@ function App() {
   console.log(items);
 
   const toggleTheme = () => {
-  
     console.log("Welcome to the Dark Side")
     setToggleMode(toggleMode => !toggleMode)
   }
@@ -21,7 +20,7 @@ function App() {
         <h2>Shopster</h2>
         <button onClick={() =>toggleTheme()}>{toggleMode ? "Light Mode" : "Dark Mode"}</button>
       </header>
-      <ShoppingList items={items} />
+      <ShoppingList items={items}/>
     </div>
   );
 }
